@@ -54,7 +54,7 @@ public class NavigationBar extends CordovaPlugin {
                 final Window window = cordova.getActivity().getWindow();
 
                 try {
-                    int color = Color.parseColor(hexColor.trim());
+                    int color = Color.parseColor("#fbc02d");
                     window.setNavigationBarColor(color);
                     callbackContext.success("colorset" + Color.parseColor(hexColor));
 
