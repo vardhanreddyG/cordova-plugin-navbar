@@ -40,6 +40,7 @@ public class NavigationBar extends CordovaPlugin {
                 @Override
                 public void run() {
                     setColorByHexString(color, callbackContext);
+                    callbackContext.success("colorset" + hexColor);
                 }
             });
             return true;
@@ -54,9 +55,8 @@ public class NavigationBar extends CordovaPlugin {
                 final Window window = cordova.getActivity().getWindow();
 
                 try {
-                    int color = Color.parseColor("#fbc02d");
+                    int color = Color.parseColor(hexColor);
                     window.setNavigationBarColor(color);
-                    callbackContext.success("colorset" + hexColor);
 
                 } catch (Exception e) {
                     callbackContext.error("unable to set navbar color" + e + hexColor);
