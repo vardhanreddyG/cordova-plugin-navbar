@@ -4,6 +4,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.app.Activity;
 import android.graphics.Color;
+import android.os.Build;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -31,7 +32,7 @@ public class NavigationBar extends CordovaPlugin {
 
     private void setColorByHexString(String hexColor, CallbackContext callbackContext) {
         if (Build.VERSION.SDK_INT >= 21) {
-            if (message != null && message.length() > 0) {
+            if (hexColor != null && hexColor.length() > 0) {
 
                 final Window window = cordova.getActivity().getWindow();
 
