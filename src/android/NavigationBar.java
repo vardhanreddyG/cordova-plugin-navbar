@@ -19,7 +19,6 @@ public class NavigationBar extends CordovaPlugin {
 
     @Override
     public void initialize(final CordovaInterface cordova, CordovaWebView webView) {
-        LOG.v(TAG, "StatusBar: initialization");
         super.initialize(cordova, webView);
 
         this.cordova.getActivity().runOnUiThread(new Runnable() {
@@ -57,6 +56,7 @@ public class NavigationBar extends CordovaPlugin {
                 try {
 
                     window.setNavigationBarColor(Color.parseColor(hexColor));
+                    callbackContext.success("colorset" + Color.parseColor(hexColor));
 
                 } catch (Exception e) {
                     callbackContext.error("unable to set navbar color");
