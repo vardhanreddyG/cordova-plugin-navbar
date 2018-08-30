@@ -5,8 +5,8 @@ var exec = require("cordova/exec");
 // };
 
 var NavigationBar = {
-  setColorByHexString: function(arg0, success, error) {
-    exec(success, error, "NavigationBar", "setColorByHexString", [arg0]);
+  setColorByHexString: function(color, error) {
+    exec(null, error, "NavigationBar", "setColorByHexString", [color]);
   }
 };
 
