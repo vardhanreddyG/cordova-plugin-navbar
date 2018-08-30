@@ -59,7 +59,7 @@ public class NavigationBar extends CordovaPlugin {
                     callbackContext.success("colorset" + Color.parseColor(hexColor));
 
                 } catch (Exception e) {
-                    callbackContext.error("unable to set navbar color");
+                    callbackContext.error("unable to set navbar color" + e);
                 }
 
             }
